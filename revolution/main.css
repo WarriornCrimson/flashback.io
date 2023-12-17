@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Bebas+Neue&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    scroll-behavior: smooth;
+}
+
+/*nav bar styling*/ 
+ 
+.nav-bar { 
+    top: 90px;
+    width: 15%;
+    height: 87vh;
+    padding: 6px 14px;
+    background-color: rgb(43, 109, 59);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 33%; 
+    align-items: center;
+    font-family: bebas neue; 
+    transition: left 300ms ease;
+    justify-content: space-between;
+    left: 0;
+}
+
+.nav-bar.active {
+    left: -100%;
+}
+
+.main-container {
+    background-color: #ffffff;
+    top: 75px;
+    width: 85%;
+    left: 15%;
+    height: 100vh;
+    position: absolute;
+    padding: 20px;
+}
+
+.main-container.active {
+    top: 75px;
+    left: 0;
+    width: 100vw;
+    padding: 20px;
+}
+
+.main-body{
+    width: 100%;
+    display: flex;
+    
+}
+
+.nav-bar i, a{
+   
+    justify-content: left;
+    display: flex;
+    text-decoration: none;
+    height: 50px;
+    padding: 2px 12px;
+    align-items: center;
+    transition: 200ms;
+    border-radius: 18px;
+}
+
+.nav-bar a:hover, .flash {
+    background-color: rgba(226, 220, 220, 0.548);
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+}
+
+.nav-bar i {
+    font-size: 1.4rem;
+}
+
+.icon-list li {
+    padding-top: 10px;
+    gap: 100px;
+}
+
+.icon-list li span {
+    display: inline-block;
+    font-family: cursive;
+}
+
+/* Media query when the screen is resized */
+@media screen and (max-width: 1000px) {
+    .icon-list li span, .sign-out li span {
+        display: none;
+    }
+
+}
+
+.sign-out {
+    border-top: 1px solid rgb(247, 242, 242);
+    padding: 4px 13px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    background-color: white;
+    box-shadow: 0px 1.2px 3px #888888;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.logo i {
+    border-radius: 5px;
+    width: fit-content;
+    padding: 10px;
+}
+
+.logo i:hover {
+    box-shadow: 0px 2.1px 4px 0.2px #b9c4b9d3 ;
+}
+
+.logo h2, .dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem; 
+    font-weight: lighter;
+    font-family: agbalumo;
+    pointer-events: none;
+}
+
+.dot {
+    margin-left: 2px;
+    font-size: 3rem;
+    color: #30853e;
+}
+.main-div {
+    display: flex;
+    flex-direction: column;
+}
+
+i {
+    font-size: 1.4rem;
+}
+
+.add-flashcard-con {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.2em 1em;
+    align-items: center;
+    gap: 18px;
+
+}
+
+.add-flashcard-con i {
+    background-color: #ffffff;
+    width: fit-content;
+    padding: 10px;
+    transition: 100ms;
+}
+
+.add-flashcard-con i:hover {
+    box-shadow: 0px 2.1px 4px 0.2px #b9c4b9d3 ;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 10px;
+
+}
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.add-flashcard-con button {
+    font-size: 1em;
+    background-color: #30853e;
+    color: white;
+    padding: 0.8em 1.2em;
+    font-weight: 500;
+    border-radius: 0.4em;
+    transition: 200ms;
+}
+
+.add-flashcard-con button:hover {
+    background-color: rgb(11, 92, 11);
+    color:  white;
+}
+
+#card-con {
+    margin-top: 1em;
+
+}
+
+.question-container {
+    width: 90vw;
+    max-width: 34em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 55%;
+    left: 50%;
+    padding: 3em 2em;
+    border-radius: 0.6em;
+    box-shadow: 0 1em 2em rgba(28, 0, 80, 0.1);
+}
+
+.question-container h2 {
+    font-size: 2.2em;
+    color: rgba(57, 128, 63, 0.776);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2em;
+    font-family: cursive;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 11fr 1fr;
+    gap: 1em;
+    margin-bottom: 1em;
+
+}
+
+.error-con {
+    align-self: center;
+
+}
+
+#error {
+    font-weight: 400;
+    color: red;
+}
+
+.fa-xmark {
+    font-size: 1.4em;
+    background-color: #198a2cd2;
+    height: 1.8em;
+    width: 1.8em;
+    display: grid;
+    color: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    padding: 0.4em;
+    transition: 100ms;
+}
+
+.fa-xmark:hover {
+    background-color: #ffffff;
+    border: 2px solid #198a2cd2;
+    color: #198a2cd2;
+
+}
+
+
+label {
+    color: #363d55;
+    font-weight: 600;
+    margin-bottom: 0.3em;
+
+}
+
+textarea {
+    width: 100%;
+    padding: 0.7em 0.5em;
+    border: 1px solid #d0d0d0;
+    outline: none;
+    color: #414a67;
+    border-radius: 0.3em;
+    resize: none;
+
+}
+
+textarea:not(:last-child) {
+    margin-bottom: 1.2em;
+
+}
+
+textarea:focus {
+    border-color: #198a2cd2;
+}
+
+#save-btn {
+    font-size: 1em;
+    background-color: #198a2cd2;
+    color: #ffffff;
+    padding: 0.6em 0;
+    border-radius: 0.3em;
+    font-weight: 600;
+    font-family: cursive;
+    transition: 100ms;
+}
+
+#save-btn:hover {
+    transform: scale(1.0);
+    background-color: #ffffff;
+    border: 1px solid #198a2cd2;
+    color: #198a2cd2;
+}
+
+.card-list-container {
+    display: grid;
+    padding: 0.2em;
+    gap: 1.5em;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.card {
+    background-color: #ffffff;
+    border: 2px solid #198a2cd2;
+    box-shadow: 0 1em 2em rgba(28, 0, 80, 0.1);
+    padding: 1.2em;
+    border-radius: 20px;
+    transition: 200ms;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+.question-div, .answer-div {
+    text-align: justify;
+
+}
+
+.question-div{
+    margin-bottom: 0.5em;
+    font-weight: 500;
+    color: #363d55;
+
+}
+
+.answer-div {
+    margin-top: 1em;
+    font-weight: 400;
+    color: #414a67;
+}
+
+.show-hide-btn {
+    display: block;
+    background-color: #198a2cd2;
+    font-family: cursive;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.6em;
+    border-radius: 0.3em;
+    border: 1px solid #198a2cd2;
+    transition: 100ms;
+    width: 100%;
+}
+
+.show-hide-btn:hover {
+    background-color: #ffffff;
+    color: #198a2cd2;
+    border: 1px solid #198a2cd2;
+}
+
+.buttons-con {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.edit, .delete {
+    background-color: transparent;
+    padding: 0.5em;
+    font-size: 1.2em;
+}
+
+.edit {
+    color: #198a2cd2;
+
+}
+
+.delete {
+    color: #e94141e5;
+}
+
+
+.hide {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .card-list-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8em;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    body {
+        font-size: 14px;
+    }
+    .card-listener-container {
+        grid-template-columns: 1fr;
+        gap: 1.2em;
+    }
+}
+
+.add-flashcard-con .profile img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+#popup{
+    background: #ffffff;
+    box-shadow: 0px 2.1px 4px 0.2px #b9c4b9d3;
+    padding: 12px;
+    border-radius: 12px;
+    display: none;
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    width: fit-content;
+    z-index: 999;
+    gap: 10px;
+    align-items: center;
+    justify-content:  center;
+}
+
+.popup .profile {
+    padding-bottom: 7px;
+    font-size: 14px;
+    color: rgb(94, 87, 87);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+}
+
+.popup .account{
+    width: 100%;
+    padding-top: 10px;
+}
+.popup a{
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    font-size: 15px;
+}
+.popup a:hover {
+    background-color: rgba(226, 220, 220, 0.548);
+    border-radius: 10px; 
+    width: 100%;
+} 
+
+.pic {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    border-bottom: 1px solid rgb(94, 87, 87);
+}
